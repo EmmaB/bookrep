@@ -1,0 +1,7 @@
+<%= form_with(url: "/products", method: "get", local: true) do %>
+  <%= text_field_tag(:q) %>
+
+  <div class="button">
+    <%= submit_tag("Make") %>
+  </div>
+<% end %>

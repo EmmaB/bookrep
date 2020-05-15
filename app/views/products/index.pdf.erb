@@ -1,0 +1,56 @@
+<% filename = "image.jpg" %>
+<% destination = Rails.root.join("tmp", filename) %>
+
+<% File.open("image.jpg", "wb") do |tempfile| %>
+  <% tempfile.write HTTParty.get(@book.supportingresources[0]["style_urls"][8]["url"]).body %>
+  <% FileUtils.mv(tempfile.path, destination ) %>
+<% end %>
+
+{\includegraphics{<%= destination %>}}
+\color{teal}
+
+\huge\textbf{<%= lesc @book.full_title %>}
+\par
+\large{<%= lesc @book.subtitle %>}A quieter subtitle
+\par
+\color{darkgray}
+\vspace{3mm} %5mm vertical space
+\normalsize\emph{<%= lesc @book.authorship %>}\emph{Edited by Bob Smith}
+\par
+\vspace{2mm} %5mm vertical space
+
+\color{teal}
+\rule{\textwidth}{0.5pt}
+\par
+\color{darkgray}\marginpar{BOB SMITH is
+curator of the Book
+Collections, Department of Antiquities, Bookland. \newline \newline
+MARY POTTS is director
+of the Ashmole Museum,
+Bookland.}
+\color{teal}
+\textbf{<%= lesc @book.marketingtexts[0]["external_text"]%>}\newline
+\rule{\textwidth}{0.5pt}
+
+\vspace{3mm} %5mm vertical space
+\color{darkgray}
+\small\lipsum[0-1]
+\par
+\footnotesize
+\vspace{3mm} %5mm vertical space
+ISBN: <%= lesc @book.isbn %>
+\par
+Edition: <%= lesc @book.in_house_edition %>
+\par
+Publication: <%= lesc @book.pub_date %>
+\par
+<%= lesc @book.measurements["product_dimensions_mm"] %>mm,
+<%= lesc @book.measurements["product_dimensions_in"] %>in,
+<%= lesc @book.extents["page_count"] %> pages
+\par
+<%= lesc @book.subjects["keywords"].join(", ") %>
+\par
+\vspace{2mm} %5mm vertical space
+\textbf{<%= lesc Date.parse(@book.pub_date).strftime("%B").upcase %>}
+\color{teal}
+\vspace{3mm} %5mm vertical space
