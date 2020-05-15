@@ -9,7 +9,6 @@
 \usepackage{xcolor}
 \renewcommand{\baselinestretch}{1.2}
 \setlength{\parindent}{0em}
-
 \usepackage{graphicx} % Needed to insert images into the document
 \usepackage[a4paper,
             inner=20mm,
