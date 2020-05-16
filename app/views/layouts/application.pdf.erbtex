@@ -1,7 +1,6 @@
 \documentclass[12pt,a4paper,sloppy]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
-\usepackage{lipsum}
 \usepackage{microtype}
 \usepackage[sfdefault,book]{FiraSans} %% option 'sfdefault' activates Fira Sans as the default text font
 \usepackage[T1]{fontenc}
