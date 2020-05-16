@@ -17,6 +17,8 @@ The output could be used by:
 
 The code is public so that technically literate publishers can fork it, edit the LaTeX templates themselves and produce AIs to their own specification. PRs welcome!
 
+[Demo app](https://bookrep.app)
+
 # TODO
 
 [x] Initial spike using demo API and rough code
@@ -44,3 +46,7 @@ The code is public so that technically literate publishers can fork it, edit the
 [ ] Additional sources of data: ONIX, Google Books, Goodreads
 
 [ ] Documentation
+
+## Deployment
+
+Requires a LaTeX buildpack to deploy to Heroku. [This one](https://github.com/EmmaB/heroku-buildpack-tex) contains the necessary libraries (originally configured for [makeourbook.com](https://makeourbook.com))
