@@ -14,21 +14,28 @@
  *= require_self
  */
 
+/* TODO: put this somewhere else */
+
+body {
+  text-align: center;
+  position: relative;
+}
+
+form {
+  display: block;
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
 input[type=text] {
-  margin-top: 200px;
   border: 2px solid #2196F3;
   border-radius: 33px;
   width: 40%;
   font-size: 20px;
   padding: 16px;
-}
-
-body {
-    text-align: center;
-}
-
-form {
-  display:block;
 }
 
 input[type="submit"] {
@@ -37,6 +44,26 @@ input[type="submit"] {
   margin-top: 20px;
   background-color: #ecf3f9;
   border-radius: 10px;
-  border: 2px solid #ffffff;
+  border: 1px solid #ffffff;
   padding: 8px 40px;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex-shrink: 0;
+  font-family: sans-serif;
+  margin: 30px;
 }

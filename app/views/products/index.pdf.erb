@@ -7,14 +7,15 @@
 <% end %>
 
 {\includegraphics{<%= destination %>}}
-\color{teal}
 
+\color{teal}
 \huge\textbf{<%= lesc @book.full_title %>}
 \par
 \large{<%= lesc @book.subtitle %>}A quieter subtitle
 \par
+
 \color{darkgray}
-\vspace{3mm} %5mm vertical space
+\vspace{3mm}
 \normalsize\emph{<%= lesc @book.authorship %>}\emph{Edited by Bob Smith}
 \par
 \vspace{2mm} %5mm vertical space
@@ -22,22 +23,19 @@
 \color{teal}
 \rule{\textwidth}{0.5pt}
 \par
-\color{darkgray}\marginpar{BOB SMITH is
-curator of the Book
-Collections, Department of Antiquities, Bookland. \newline \newline
-MARY POTTS is director
-of the Ashmole Museum,
-Bookland.}
+\color{darkgray}\marginpar{BOB SMITH is curator of the Book Collections, Department of Antiquities, Bookland. \newline \newline
+MARY POTTS is director of the Ashmole Museum, Bookland.}
+
 \color{teal}
 \textbf{<%= lesc @book.marketingtexts[0]["external_text"]%>}\newline
 \rule{\textwidth}{0.5pt}
+\vspace{3mm}
 
-\vspace{3mm} %5mm vertical space
 \color{darkgray}
 \small\lipsum[0-1]
 \par
 \footnotesize
-\vspace{3mm} %5mm vertical space
+\vspace{3mm}
 ISBN: <%= lesc @book.isbn %>
 \par
 Edition: <%= lesc @book.in_house_edition %>
@@ -50,7 +48,6 @@ Publication: <%= lesc @book.pub_date %>
 \par
 <%= lesc @book.subjects["keywords"].join(", ") %>
 \par
-\vspace{2mm} %5mm vertical space
+\vspace{2mm}
 \textbf{<%= lesc Date.parse(@book.pub_date).strftime("%B").upcase %>}
 \color{teal}
-\vspace{3mm} %5mm vertical space
